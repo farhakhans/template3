@@ -3,7 +3,7 @@ import { createClient } from 'next-sanity';
 import Image from 'next/image';
 
 const client = createClient({
-  projectId: 'your-project-id', // Sanity Project ID
+  projectId: 'ulknzjdk', // Sanity Project ID
   dataset: 'production',
   apiVersion: '2023-01-01',
   useCdn: true,
@@ -13,6 +13,8 @@ interface Product {
   _id: string;
   title: string;
   price: number;
+  description: string;
+  discountPercentage: number;
   image: { asset: { url: string } };
 }
 
