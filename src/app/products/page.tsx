@@ -24,7 +24,7 @@ console.log(data)
 
 <div className="gap-5 grid grid-cols-1 p-12">
     {
-        data.map((val:any, i:any)=>{
+        data.map((val:any, _i:any)=>{
             return (
 
                 <>
