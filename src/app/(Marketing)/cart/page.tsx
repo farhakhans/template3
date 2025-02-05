@@ -1,20 +1,26 @@
-
-
-
-
+"use client"
 import Image from "next/image";
-import { client } from "../../sanity/lib/client";
-async function  getdata() {
-    const fetchdata = client.fetch(`*[_type =="product"]{
-    name,
+import { client } from "../../../sanity/lib/client";
+import Link from "next/link";
+
+
+
+
+async function  getdata() 
+{
+  const fetchdata = client.fetch(`*[_type =="product"]{
+
+    productName,
+      category,
    price,
-   description,
-    "image_url":image.asset->url,
+ description,
+      status,
+   "image_url":image.asset->url,
     }`)
     return fetchdata
     
 }
-export default  async function Products(){
+export default  async function Products({params}:{params:{product:string}}){
 const data = await getdata()
 console.log(data)
   return (
@@ -22,14 +28,14 @@ console.log(data)
 <>
 
 
-<div className="gap-5 grid grid-cols-1 p-12">
+
     {
         data.map((val:any, _i:any)=>{
             return (
 
                 <>
-                <div className="gap-5 grid grid-cols-3 p-12 shadow-sm">
-              <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+                <div className="gap-5 grid grid-cols-3 p-12 shadow-lg">
+              <div className="w-full max-w-sm bg-yellow-900 border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
   <a href="#">
     <Image
       className="p-8 rounded-t-lg"
@@ -41,8 +47,11 @@ console.log(data)
   </a>
   <div className="px-5 pb-5">
     <a href="#">
-      <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-      Nike Waffle One SE
+      <h5 className="text-xl font-semibold tracking-tight text-white dark:text-white">
+{val.productName}<br></br>
+{val.category}<br></br>
+{val.status}
+
       </h5>
     </a>
     <div className="flex items-center mt-2.5 mb-5">
@@ -98,26 +107,29 @@ console.log(data)
       </span>
     </div>
     <div className="flex items-center justify-between">
-      <span className="text-3xl font-bold text-gray-900 dark:text-white">
+      <span className="text-3xl font-bold text-white dark:text-white">
         {val.price}
       </span>
       <a
         href="#"
-        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        className="text-red-900 bg-blue-700 hover:bg-white focus:ring-4 focus:outline-none focus:ring-white rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-bold"
       >
-        Add to cart
+      <Link href="/checkOut">Add to cart</Link>
       </a>
+      
     </div>
   </div>
 </div>
+<p>{params.product}</p>
 </div>
+
 
                 </>
             )
 
         })
     }
-</div>
+
 
 
 </>

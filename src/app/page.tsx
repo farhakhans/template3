@@ -1,4 +1,11 @@
-import Products from "./products/page";
+
+
+import Navbar from "./component/Navbar";
+import HeroSection from "./component/Hero";
+import Footer from "./component/Footer";
+
+
+
 
 
 
@@ -6,8 +13,15 @@ import Products from "./products/page";
 const HomePage = () => {
   return (
     <div>
-  
-<Products/>
+  <Navbar/>
+  <HeroSection params={{
+        HeroSection: ""
+      }}/>
+  <Footer/>
+
+
+
+
     </div>
   );
 };
