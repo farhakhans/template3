@@ -3,11 +3,11 @@
 import Link from "next/link";
 import React from "react";
 
-type HeroSectionProps = {
-  params: {
-    allDetailPage: string;
+interface HeroSectionProps {
+  params?: {
+    allDetailPage?: string;
   };
-};
+}
 
 export default function HeroSection({ params }: HeroSectionProps) {
   return (
@@ -21,7 +21,6 @@ export default function HeroSection({ params }: HeroSectionProps) {
 
       {/* Hero Section Container */}
       <div className="container mx-auto px-6 py-12 flex flex-col-reverse md:flex-row items-center">
-        {/* Image Section */}
         <div className="w-full md:w-2/2 flex justify-center items-center -mt-9">
           <img
             src="/1st shoe image.png"
@@ -34,21 +33,20 @@ export default function HeroSection({ params }: HeroSectionProps) {
       <div className="flex items-center justify-center font-bold text-lg">
         <h1>First Look</h1>
       </div>
-
       <div className="flex items-center justify-center text-6xl font-bold">
         <h1>Nike Air Max Pulse</h1>
       </div>
-
       <div className="flex items-center justify-center mt-5 text-sm">
         <p>
           Extreme comfort. Hyper durable. Max volume. Introducing the Air Max
-          Pulse — designed to push you past your limits and help you go to the
-          max.
+          Pulse
+          <br />
+          —designed to push you past your limits and help you go to the max.
         </p>
       </div>
 
       {/* Buttons */}
-      <div className="mt-8 flex gap-4 justify-center md:justify-start translate-x-96 ml-40">
+      <div className="mt-8 flex gap-4 justify-center">
         <button className="px-6 py-3 bg-black text-white rounded-full shadow-lg hover:bg-blue-800 transition-all">
           Notify Me
         </button>
@@ -57,9 +55,15 @@ export default function HeroSection({ params }: HeroSectionProps) {
         </button>
       </div>
 
-      <p>{params.allDetailPage}</p>
+      {/* Example use of params (if passed) */}
+      <div className="text-center mt-5">
+        {params?.allDetailPage && (
+          <p className="text-gray-600">Dynamic Param: {params.allDetailPage}</p>
+        )}
+      </div>
     </div>
   );
 }
+
 
 
