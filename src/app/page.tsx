@@ -4,7 +4,7 @@ import Navbar from "./component/Navbar";
 import HeroSection from "./component/Hero";
 import Footer from "./component/Footer";
 
-const HomePage = () => {
+export default function HomePage () {
   return (
     <div>
   <Navbar/>
@@ -16,6 +16,5 @@ const HomePage = () => {
 
     </div>
   );
-};
+}
 
-export default HomePage; 
