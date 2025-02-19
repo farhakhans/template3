@@ -14,9 +14,7 @@ const HomePage = () => {
   return (
     <div>
   <Navbar/>
-  <HeroSection params={{
-        HeroSection: ""
-      }}/>
+ <Hero/>
   <Footer/>
 
 
