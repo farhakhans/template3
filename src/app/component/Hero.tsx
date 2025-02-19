@@ -1,10 +1,12 @@
-
-
 "use client"
 import Link from 'next/link';
 import React from 'react';
 
- export default async function HeroSection({params}:{params:{allDetailPage:string}}){
+
+
+
+
+ export default async function HeroSection({}:{params:{allDetailPage:string}}){
   return (
     <div className="relative bg-gray-100 h-[670vh] mt-8 ">
       <div className=' items-center justify-center p-5 font-bold'>
@@ -309,7 +311,7 @@ Kids' Jordan Shoes<br></br>
 Kids' Basketball Shoes</p>
 </div>
 
-<p>{params.allDetailPage}</p>
+
 
 </div>
   
@@ -318,8 +320,4 @@ Kids' Basketball Shoes</p>
   );
 };
  HeroSection
-
-
-
-
 
