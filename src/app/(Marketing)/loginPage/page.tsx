@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Navbar from '../../component/Navbar';
 import Footer from '../../component/Footer';
 
-export default function Login({ params }: { params: { loginPage: string } }) {
+export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [keepSignedIn, setKeepSignedIn] = useState(false);
@@ -97,7 +97,7 @@ export default function Login({ params }: { params: { loginPage: string } }) {
       </Link>
       
       <Footer />
-      <p>{params.loginPage}</p>
+ 
     </div>
   );
 }
