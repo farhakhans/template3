@@ -317,5 +317,5 @@ Kids' Basketball Shoes</p>
   
   );
 };
- HeroSection
+ export default HeroSection
 
