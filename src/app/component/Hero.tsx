@@ -6,7 +6,7 @@ import React from 'react';
 
 
 
- export default async function HeroSection({}:{params:{allDetailPage:string}}){
+ export default async function HeroSection({}:{params:{allDetailPage:any}}){
   return (
     <div className="relative bg-gray-100 h-[670vh] mt-8 ">
       <div className=' items-center justify-center p-5 font-bold'>
