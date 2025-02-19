@@ -20,7 +20,7 @@ async function  getdata()
     return fetchdata
     
 }
-export default  async function Products({params}:{params:{product:string}}){
+export default  async function Products(){
 const data = await getdata()
 console.log(data)
   return (
@@ -120,7 +120,7 @@ console.log(data)
     </div>
   </div>
 </div>
-<p>{params.product}</p>
+
 </div>
 
 
