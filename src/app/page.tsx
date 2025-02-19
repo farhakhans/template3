@@ -4,12 +4,6 @@ import Navbar from "./component/Navbar";
 import HeroSection from "./component/Hero";
 import Footer from "./component/Footer";
 
-
-
-
-
-
-// src/app/page.tsx
 const HomePage = () => {
   return (
     <div>
@@ -24,4 +18,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage; // Default export hona chahiye
+export default HomePage; 
