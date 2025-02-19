@@ -24,7 +24,7 @@ const sampleProducts = [
   },
 ];
 
-export default function CheckoutPage({ params }: { params: { product: string } }) {
+export default function CheckoutPage() {
   const [cartItems, setCartItems] = useState(sampleProducts);
   const [isCheckoutComplete, setIsCheckoutComplete] = useState(false);
   const [newProduct, setNewProduct] = useState({
