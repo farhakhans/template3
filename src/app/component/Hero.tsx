@@ -4,9 +4,7 @@ import React from 'react';
 
 
 
-
-
- export default function HeroSection(){
+const HeroSection=()=>{
   return (
     <div className="relative bg-gray-100 h-[670vh] mt-8 ">
       <div className=' items-center justify-center p-5 font-bold'>
